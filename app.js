@@ -14,6 +14,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 const filmRoute = require('./app/routes/film_route');
+const serieRoute = require('./app/routes/serie_route');
 
 // Setup of the variables app to use bodyParser    
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,6 +48,7 @@ router.get('/', function(req, res) {
 });
 
 app.use('/api/films', filmRoute);
+app.use('/api/series', serieRoute);
 
 // Starting the app (server)
 app.listen(port);
