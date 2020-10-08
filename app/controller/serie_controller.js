@@ -30,7 +30,7 @@ exports.update = (req, res) => {
         if(err){
             res.send('erro ao atualizar a Série :( ' + err);
         }
-        res.json({ message: 'Uhuul, Série atualizada com sucesso! :)' }, currentSerie);
+        res.json({ message: 'Uhuul, Série atualizada com sucesso! :)' });
     });
 }
 
@@ -41,7 +41,7 @@ exports.delete = (req, res) => {
         if(err){
             res.send('erro ao deletar a Série :( ' + err);
         }
-        res.json({ message: 'Série deletada.' }, currentSerie);
+        res.json({ message: 'Série deletada.' });
     });
 }
 

@@ -13,8 +13,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-const filmRoute = require('./routes/film_route');
-const serieRoute = require('./routes/serie_route');
+const filmRoute = require('./app/routes/film_route');
+const serieRoute = require('./app/routes/serie_route');
 
 // Setup of the variables app to use bodyParser    
 app.use(bodyParser.urlencoded({ extended: true }));

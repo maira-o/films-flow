@@ -30,7 +30,7 @@ exports.update = (req, res) => {
         if(err){
             res.send('erro ao atualizar o film :( ' + err);
         }
-        res.json({ message: 'Uhuul, film atualizado com sucesso! :)' }, currentFilm);
+        res.json({ message: 'Uhuul, film atualizado com sucesso! :)' });
     });
 }
 
@@ -41,7 +41,7 @@ exports.delete = (req, res) => {
         if(err){
             res.send('erro ao deletar o film :( ' + err);
         }
-        res.json({ message: 'Film deletado.' }, currentFilm);
+        res.json({ message: 'Film deletado.' });
     });
 }
 
