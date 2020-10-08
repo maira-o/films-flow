@@ -32,3 +32,5 @@
     language: String,
     status: String
   });
+
+  module.exports = mongoose.model('Film', FilmSchema);
