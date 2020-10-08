@@ -1,0 +1,25 @@
+{
+  "name": "films-flow",
+  "version": "1.0.0",
+  "description": "CRUD with Node - This application is part 1 of a college work",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --report spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maira-o/films-flow.git"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "express": "4.17.1",
+    "mongoose": "5.10.7",
+    "request": "2.88.2"
+  },
+  "author": "Maíra Oliveira",
+  "license": "CC0 1.0 Universal",
+  "bugs": {
+    "url": "https://github.com/maira-o/films-flow/issues"
+  },
+  "homepage": "https://github.com/maira-o/films-flow#readme"
+}
