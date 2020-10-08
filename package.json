@@ -2,7 +2,7 @@
   "name": "films-flow",
   "version": "1.0.0",
   "description": "CRUD with Node - This application is part 1 of a college work",
-  "main": "app.js",
+  "main": "./app/app.js",
   "scripts": {
     "dev": "nodemon",
     "test": "./node_modules/.bin/mocha --report spec"
