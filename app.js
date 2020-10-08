@@ -54,8 +54,10 @@ router.get('/', function(req, res) {
     res.json({ message: 'Olá, vc está em Film & Flow!' })   
 });
 
-app.use('/api/films', controller.validateToken, filmRoute);
-app.use('/api/series', controller.validateToken, serieRoute);
+app.use('/api/films', filmRoute);
+// app.use('/api/films', controller.validateToken, filmRoute);
+app.use('/api/series', serieRoute);
+// app.use('/api/series', controller.validateToken, serieRoute);
 
 app.use('/api/users', userRoute);
 

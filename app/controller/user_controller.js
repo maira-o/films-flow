@@ -3,7 +3,6 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-
 exports.list = (req, res) => { 
     User.find({},(err, users) => {
         if(err){
@@ -12,7 +11,6 @@ exports.list = (req, res) => {
         res.json(users);
     });
 }
-
 
 exports.add = (req, res) => {
     let newUser = new User(req.body);
@@ -62,31 +60,33 @@ exports.searchUser = (req, res, next) => {
         console.log(paramUser);
 
         User.findOne({user: paramUser}, (err, user) => {
-            if(err){
+            if(err) {
                 res.status(500).send(err);
             }
             res.json(user);
         });
     }    
 }
-
 exports.validateUser = (req, res, next) => {
     if (req.body && req.body.user && req.body.password){
-        const username = req.body.user;
+        const user = req.body.user;
         const password = req.body.password;
-        User.findOne({user: username}, (err, user) => {
+
+        User.findOne({user: user}, (err, user) => {
             if(err) {
                 res.status(500).send(err);
             }
-            const valide = bcrypt.compareSync(password, user.password);
-            if(user && valide) {
+
+            const isValide = bcrypt.compareSync(password, user.password);
+
+            if(user && isValide) {
                 const token = jwt.sign({
                     id: user.id
                 }, 'M@ira01', {expiresIn: "1h"});
+
                 res.status(201).send({"token":token});
-            }
-            else {
-                res.status(401).send("Usuario ou senha invalidos :(");
+            } else {
+                res.status(401).send("Usuario ou senha inválidos :(");
             }
         });
     }
@@ -96,13 +96,11 @@ exports.validateToken = (req, res, next) => {
     const token = req.get("x-auth-token");
     if(!token) {
         res.status(401).send("Nao tem token de acesso");
-    }
-    else {
+    } else {
         jwt.verify(token,'M@ira01',(err, userId) =>{
             if(err) {
                 res.status(401).send(err);
-            }
-            else {
+            } else {
                 console.log("Usuario autorizado: " + userId);
                 next();
             }

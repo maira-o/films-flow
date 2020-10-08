@@ -27,7 +27,7 @@ var Schema = mongoose.Schema;
    name: String,
    origin: String,
    year: Number,
-   director: String,
+   creator: String,
    genre: String,
    language: String,
    status: String

@@ -17,7 +17,7 @@ exports.add = (req, res) => {
         if(err){
             res.send('erro ao tentar salvar uma série' + err);
         }    
-        res.status(201).json({ message: 'Uhuul, você adicionou mais uma Séria em Film & Flow!' });
+        res.status(201).json({ message: 'Uhuul, você adicionou mais uma Série em Film & Flow!' });
         
     });
 }
