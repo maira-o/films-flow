@@ -71,7 +71,6 @@ exports.validateUser = (req, res, next) => {
     if (req.body && req.body.user && req.body.password){
         const user = req.body.user;
         const password = req.body.password;
-
         User.findOne({user: user}, (err, user) => {
             if(err) {
                 res.status(500).send(err);
